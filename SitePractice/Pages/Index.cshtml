@@ -1,0 +1,38 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="UTF-8">
+</head>
+
+<body>
+
+    <div class="card-columns">
+        @foreach (var product in Model.Destinations)
+        {
+        <div class="card">
+            <div class="card-body">
+                <h2>
+                    @Html.Raw(product.Name)
+                    @product.City
+                </h2>
+            </div>
+            <div class="card-body">
+                @product.ShortDescription
+            </div>
+        </div>
+        }
+    </div>
+
+
+</body>
+
+</html>
+
